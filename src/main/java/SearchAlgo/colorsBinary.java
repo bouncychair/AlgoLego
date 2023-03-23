@@ -1,20 +1,14 @@
 package SearchAlgo;
+
 import com.opencsv.CSVReader;
 import com.opencsv.CSVReaderBuilder;
-import com.opencsv.enums.CSVReaderNullFieldIndicator;
-import com.opencsv.exceptions.CsvValidationException;
 
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Objects;
-import java.util.Scanner;
 
-//./lego_db/colors.csv
-public class colorsLinear {
-    public static void main(String[] args) throws Exception{
+public class colorsBinary {
+    public static void main(String[] args) throws Exception {
         ArrayList<String> colors = new ArrayList<String>();
         try {
             //csv file containing data
@@ -30,24 +24,35 @@ public class colorsLinear {
         } finally {
             //System.out.println(colors);
 
-            int foundIndex = linearSearch(colors, "237841");
-            if(foundIndex != -1){ //if the index is found (so the index it is not -1) then we have found the value
+            int foundIndex = binarySearch(colors, "237841");
+            if (foundIndex != -1) { //if the index is found (so the index it is not -1) then we have found the value
                 System.out.println("Element found at index " + foundIndex);
-            }else{
+            } else {
                 System.out.println("Element not found");
             }
         }
     }
 
-    private static int linearSearch(ArrayList<String> colors, String c){
-        for(int i=0; i < colors.size(); i++){
-            if(Objects.equals(colors.get(i), c)){
-                return i;
+    private static int binarySearch(ArrayList<String> colors, String c) {
+        int l = 0; //low
+        int h = colors.size() - 1; //high
+        int m; //middle
+
+        while(l <= h){
+            m = (l+h)/2;
+
+            if(colors.get(m).compareTo(c) < 0){
+                l = m+1;
+            }else if(colors.get(m).compareTo(c) > 0){
+                h = m -1;
+            }else{
+                return m;
             }
+
         }
+
+
 
         return -1;
     }
 }
-
-
