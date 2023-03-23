@@ -9,6 +9,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Objects;
 import java.util.Scanner;
 
 //./lego_db/colors.csv
@@ -40,7 +41,7 @@ public class colorsLinear {
 
     private static int linearSearch(ArrayList<String> colors, String c){
         for(int i=0; i < colors.size(); i++){
-            if(colors.indexOf(i) != c){ //this is not correct
+            if(Objects.equals(colors.get(i), c)){ //this is not correct
                 return i;
             }
         }
