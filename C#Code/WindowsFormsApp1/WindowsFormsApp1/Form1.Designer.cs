@@ -36,6 +36,7 @@
             this.insert_bttn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.legoSets = new System.Windows.Forms.DataGridView();
+            this.result_TB = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.legoSets)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,6 +50,7 @@
             this.QuickSort_radio.TabStop = true;
             this.QuickSort_radio.Text = "QuickSort";
             this.QuickSort_radio.UseVisualStyleBackColor = true;
+            
             // 
             // BubbleSort_radio
             // 
@@ -91,6 +93,7 @@
             this.Search_bttn.TabIndex = 4;
             this.Search_bttn.Text = "Search";
             this.Search_bttn.UseVisualStyleBackColor = true;
+            this.Search_bttn.Click += new System.EventHandler(this.Search_bttn_Click);
             // 
             // insert_bttn
             // 
@@ -120,14 +123,23 @@
             this.legoSets.Name = "legoSets";
             this.legoSets.RowHeadersWidth = 51;
             this.legoSets.RowTemplate.Height = 24;
-            this.legoSets.Size = new System.Drawing.Size(548, 379);
+            this.legoSets.Size = new System.Drawing.Size(546, 159);
             this.legoSets.TabIndex = 8;
+            // 
+            // result_TB
+            // 
+            this.result_TB.Location = new System.Drawing.Point(60, 299);
+            this.result_TB.Name = "result_TB";
+            this.result_TB.Size = new System.Drawing.Size(550, 198);
+            this.result_TB.TabIndex = 9;
+            this.result_TB.Text = "";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(972, 568);
+            this.Controls.Add(this.result_TB);
             this.Controls.Add(this.legoSets);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.insert_bttn);
@@ -154,6 +166,7 @@
         private System.Windows.Forms.Button insert_bttn;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView legoSets;
+        private System.Windows.Forms.RichTextBox result_TB;
     }
 }
 

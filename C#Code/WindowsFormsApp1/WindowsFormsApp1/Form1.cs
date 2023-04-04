@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -66,9 +67,67 @@ namespace WindowsFormsApp1
             }
             else
             {
-                MessageBox.Show("Please select a valid file!");
+                MessageBox.Show("Please select a valid file! \n -> CSV");
             }
 
         }
+
+        private void Search_bttn_Click(object sender, EventArgs e)
+        {
+            if (QuickSort_radio.Checked)
+            {
+                string source = legoSets.DataSource.ToString();
+                List<string> colors = new List<string>();
+
+                using (StreamReader sr = new StreamReader(source))
+                {
+                    while (!sr.EndOfStream)
+                    {
+                        string line = sr.ReadLine();
+                        colors.Add(line);
+                    }
+                }
+
+                Quicksort(colors, 0, colors.Count - 1);
+
+
+                void Quicksort(List<string> arr, int left, int right)
+                {
+                    if (left < right)
+                    {
+                        int pivotIndex = Partition(arr, left, right);
+                        Quicksort(arr, left, pivotIndex - 1);
+                        Quicksort(arr, pivotIndex + 1, right);
+                    }
+                }
+
+                int Partition(List<string> arr, int left, int right)
+                {
+                    string pivot = arr[right];
+                    int i = left - 1;
+                    for (int j = left; j < right; j++)
+                    {
+                        if (arr[j].CompareTo(pivot) <= 0)
+                        {
+                            i++;
+                            string temp = arr[i];
+                            arr[i] = arr[j];
+                            arr[j] = temp;
+                        }
+                    }
+                    string temp2 = arr[i + 1];
+                    arr[i + 1] = arr[right];
+                    arr[right] = temp2;
+                    return i + 1;
+                }
+
+                foreach(string item in colors)
+                {
+                    string result = item;
+                    result += result_TB.Text;
+                }
+            }
+        }
     }
 }
+
