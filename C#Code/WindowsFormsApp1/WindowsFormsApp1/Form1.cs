@@ -36,6 +36,8 @@ namespace WindowsFormsApp1
                         string data = "";
 
                         // Read file contents line by line
+                        //ignore the first line of the csv file(name the column name)
+                        string headerLine = reader.ReadLine();
                         while (!reader.EndOfStream)
                         {
                             string line = reader.ReadLine();
