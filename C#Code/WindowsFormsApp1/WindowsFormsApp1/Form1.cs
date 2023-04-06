@@ -15,6 +15,7 @@ namespace WindowsFormsApp1
 {
     public partial class Form1 : Form
     {
+        List<string> colorsName = new List<string>();
         public Form1()
         {
             InitializeComponent();
@@ -29,6 +30,7 @@ namespace WindowsFormsApp1
             };
             if (fd.ShowDialog().Equals(DialogResult.OK))
             {
+
                 try
                 {
                     using (StreamReader reader = new StreamReader(fd.FileName))
@@ -45,8 +47,9 @@ namespace WindowsFormsApp1
                             string value = columns[1];
                             data += value + "\n";
                         }
-                        result_TB.Text = data;
+                        colorsName.Add(data);                   
                     }
+                    statusFile.Text = "File loaded !";
 
                 }
                 catch (Exception exception)
@@ -88,7 +91,10 @@ namespace WindowsFormsApp1
             if (LinearSearch_radio.Checked)
             {
                 //Insert code here for linear search
-                result_TB.Text = "Linear Search!";
+                foreach(String name in colorsName)
+                {
+                    result_TB.Text += name;
+                }
             }
 
             if (BinarySearch_radio.Checked)

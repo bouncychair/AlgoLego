@@ -37,6 +37,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.Option_combo = new System.Windows.Forms.ComboBox();
             this.result_TB = new System.Windows.Forms.RichTextBox();
+            this.statusFile = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // QuickSort_radio
@@ -144,11 +145,19 @@
             this.result_TB.TabIndex = 9;
             this.result_TB.Text = "";
             // 
+            // statusFile
+            // 
+            this.statusFile.Location = new System.Drawing.Point(45, 58);
+            this.statusFile.Name = "statusFile";
+            this.statusFile.Size = new System.Drawing.Size(100, 20);
+            this.statusFile.TabIndex = 11;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(729, 462);
+            this.Controls.Add(this.statusFile);
             this.Controls.Add(this.Option_combo);
             this.Controls.Add(this.result_TB);
             this.Controls.Add(this.label1);
@@ -177,6 +186,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox Option_combo;
         private System.Windows.Forms.RichTextBox result_TB;
+        private System.Windows.Forms.TextBox statusFile;
     }
 }
 
