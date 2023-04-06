@@ -51,7 +51,7 @@ namespace WindowsFormsApp1
                                 }
                                 result_TB.Text += "\n";
                                 firstRow = false;
-                               
+
                             }
                             else
                             {
@@ -66,7 +66,7 @@ namespace WindowsFormsApp1
                         }
                         sr.Close();
                     }
-                    
+
                 }
                 catch (Exception exception)
                 {
@@ -85,7 +85,7 @@ namespace WindowsFormsApp1
 
             //fix selecting the rows
             //checking the layout of programm
-            if (QuickSort_radio.Checked)
+            /*if (QuickSort_radio.Checked)
             {
                 var source = result_TB.Text;
                 List<string> colors = new List<string>();
@@ -138,6 +138,7 @@ namespace WindowsFormsApp1
                     result += result_TB.Text;
                 }
             }
+        }*/
         }
     }
 }
