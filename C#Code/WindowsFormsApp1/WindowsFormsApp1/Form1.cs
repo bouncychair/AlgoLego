@@ -28,7 +28,6 @@ namespace WindowsFormsApp1
             };
             if (fd.ShowDialog().Equals(DialogResult.OK))
             {
-                //RichTextBox result_TB = new RichTextBox();
                 try
                 {
                     using (StreamReader sr = new StreamReader(fd.FileName))
