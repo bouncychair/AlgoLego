@@ -35,9 +35,8 @@
             this.Search_bttn = new System.Windows.Forms.Button();
             this.insert_bttn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.legoSets = new System.Windows.Forms.DataGridView();
             this.result_TB = new System.Windows.Forms.RichTextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.legoSets)).BeginInit();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // QuickSort_radio
@@ -50,7 +49,6 @@
             this.QuickSort_radio.TabStop = true;
             this.QuickSort_radio.Text = "QuickSort";
             this.QuickSort_radio.UseVisualStyleBackColor = true;
-            
             // 
             // BubbleSort_radio
             // 
@@ -116,31 +114,32 @@
             this.label1.TabIndex = 7;
             this.label1.Text = "LEGO ALGORITHMS";
             // 
-            // legoSets
-            // 
-            this.legoSets.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.legoSets.Location = new System.Drawing.Point(60, 111);
-            this.legoSets.Name = "legoSets";
-            this.legoSets.RowHeadersWidth = 51;
-            this.legoSets.RowTemplate.Height = 24;
-            this.legoSets.Size = new System.Drawing.Size(546, 159);
-            this.legoSets.TabIndex = 8;
-            // 
             // result_TB
             // 
-            this.result_TB.Location = new System.Drawing.Point(60, 299);
+            this.result_TB.Location = new System.Drawing.Point(60, 99);
             this.result_TB.Name = "result_TB";
-            this.result_TB.Size = new System.Drawing.Size(550, 198);
+            this.result_TB.Size = new System.Drawing.Size(550, 398);
             this.result_TB.TabIndex = 9;
             this.result_TB.Text = "";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "ArrayList",
+            "LinkedList"});
+            this.comboBox1.Location = new System.Drawing.Point(635, 99);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(203, 24);
+            this.comboBox1.TabIndex = 10;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(972, 568);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.result_TB);
-            this.Controls.Add(this.legoSets);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.insert_bttn);
             this.Controls.Add(this.Search_bttn);
@@ -150,7 +149,6 @@
             this.Controls.Add(this.QuickSort_radio);
             this.Name = "Form1";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.legoSets)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -165,8 +163,8 @@
         private System.Windows.Forms.Button Search_bttn;
         private System.Windows.Forms.Button insert_bttn;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView legoSets;
         private System.Windows.Forms.RichTextBox result_TB;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
 

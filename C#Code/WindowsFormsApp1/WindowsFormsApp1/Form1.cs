@@ -28,7 +28,7 @@ namespace WindowsFormsApp1
             };
             if (fd.ShowDialog().Equals(DialogResult.OK))
             {
-                DataTable dt = new DataTable();
+                //RichTextBox result_TB = new RichTextBox();
                 try
                 {
                     using (StreamReader sr = new StreamReader(fd.FileName))
@@ -41,24 +41,32 @@ namespace WindowsFormsApp1
                             string line = sr.ReadLine();
                             string[] lineElements = line.Split(',');
 
+
                             if (firstRow)
                             {
                                 // The first row defines the column names
                                 foreach (string title in lineElements)
                                 {
-                                    dt.Columns.Add(title);
+                                    result_TB.Text += title + "\t ";
                                 }
-
+                                result_TB.Text += "\n";
                                 firstRow = false;
+                               
                             }
                             else
                             {
-                                // Adding values to the DataTable
-                                dt.Rows.Add(lineElements);
+                                // Adding values to the TB
+                                foreach (string value in lineElements)
+                                {
+                                    result_TB.Text += value + "\t";
+                                }
+                                result_TB.Text += "\n";
+
                             }
                         }
+                        sr.Close();
                     }
-                    legoSets.DataSource = dt;
+                    
                 }
                 catch (Exception exception)
                 {
@@ -74,9 +82,12 @@ namespace WindowsFormsApp1
 
         private void Search_bttn_Click(object sender, EventArgs e)
         {
+
+            //fix selecting the rows
+            //checking the layout of programm
             if (QuickSort_radio.Checked)
             {
-                string source = legoSets.DataSource.ToString();
+                var source = result_TB.Text;
                 List<string> colors = new List<string>();
 
                 using (StreamReader sr = new StreamReader(source))
