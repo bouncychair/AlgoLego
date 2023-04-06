@@ -38,6 +38,8 @@
             this.Option_combo = new System.Windows.Forms.ComboBox();
             this.result_TB = new System.Windows.Forms.RichTextBox();
             this.statusFile = new System.Windows.Forms.TextBox();
+            this.colorNameInput = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // QuickSort_radio
@@ -152,11 +154,29 @@
             this.statusFile.Size = new System.Drawing.Size(100, 20);
             this.statusFile.TabIndex = 11;
             // 
+            // colorNameInput
+            // 
+            this.colorNameInput.Location = new System.Drawing.Point(544, 307);
+            this.colorNameInput.Name = "colorNameInput";
+            this.colorNameInput.Size = new System.Drawing.Size(100, 20);
+            this.colorNameInput.TabIndex = 12;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(473, 310);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(65, 13);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "Color Name:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(729, 462);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.colorNameInput);
             this.Controls.Add(this.statusFile);
             this.Controls.Add(this.Option_combo);
             this.Controls.Add(this.result_TB);
@@ -187,6 +207,8 @@
         private System.Windows.Forms.ComboBox Option_combo;
         private System.Windows.Forms.RichTextBox result_TB;
         private System.Windows.Forms.TextBox statusFile;
+        private System.Windows.Forms.TextBox colorNameInput;
+        private System.Windows.Forms.Label label2;
     }
 }
 

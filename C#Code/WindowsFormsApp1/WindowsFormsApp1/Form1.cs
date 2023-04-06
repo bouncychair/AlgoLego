@@ -36,18 +36,21 @@ namespace WindowsFormsApp1
                     using (StreamReader reader = new StreamReader(fd.FileName))
                     {
                         string data = "";
-
                         // Read file contents line by line
                         //ignore the first line of the csv file(name the column name)
+                        
                         string headerLine = reader.ReadLine();
                         while (!reader.EndOfStream)
                         {
                             string line = reader.ReadLine();
-                            string[] columns = line.Split(',');
-                            string value = columns[1];
-                            data += value + "\n";
+                            string[] fields = line.Split(',');
+
+                            if (fields.Length > 1)
+                            {
+                                colorsName.Add(fields[1]);
+                            }
                         }
-                        colorsName.Add(data);                   
+                        //colorsName.Add(data);                   
                     }
                     statusFile.Text = "File loaded !";
 
@@ -91,10 +94,22 @@ namespace WindowsFormsApp1
             if (LinearSearch_radio.Checked)
             {
                 //Insert code here for linear search
-                foreach(String name in colorsName)
+                /*foreach(String name in colorsName)
                 {
                     result_TB.Text += name;
+                }*/
+
+                result_TB.Text = colorsName[2];
+
+                //string target = colorNameInput.Text;
+
+                /*for(int i = 0; i < colorsName.Count; i++)
+                {
+                    if (colorsName[i] == target){
+                        result_TB.Text = i.ToString();
+                    }
                 }
+                result_TB.Text = "Color name not found !";*/
             }
 
             if (BinarySearch_radio.Checked)
