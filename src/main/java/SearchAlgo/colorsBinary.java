@@ -18,13 +18,13 @@ public class colorsBinary {
             int lineNumber = 0;
             while ((nextLine = reader.readNext()) != null) {
                 // nextLine[] is an array of values from the line
-                colors.add(nextLine[2]);
+                colors.add(nextLine[1]);
                 //System.out.println(nextLine[2]);
             }
         } finally {
             //System.out.println(colors);
 
-            int foundIndex = binarySearch(colors, "237841");
+            int foundIndex = binarySearch(colors, "Blue");
             if (foundIndex != -1) { //if the index is found (so the index it is not -1) then we have found the value
                 System.out.println("Element found at index " + foundIndex);
             } else {
