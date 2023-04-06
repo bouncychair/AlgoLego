@@ -84,60 +84,25 @@ namespace WindowsFormsApp1
 
             //fix selecting the rows
             //checking the layout of programm
-            /*if (QuickSort_radio.Checked)
+            if (Option_combo.SelectedIndex == 2 && QuickSort_radio.Checked)
             {
-                var source = result_TB.Text;
-                List<string> colors = new List<string>();
-
-                using (StreamReader sr = new StreamReader(source))
-                {
-                    while (!sr.EndOfStream)
-                    {
-                        string line = sr.ReadLine();
-                        colors.Add(line);
-                    }
-                }
-
-                Quicksort(colors, 0, colors.Count - 1);
-
-
-                void Quicksort(List<string> arr, int left, int right)
-                {
-                    if (left < right)
-                    {
-                        int pivotIndex = Partition(arr, left, right);
-                        Quicksort(arr, left, pivotIndex - 1);
-                        Quicksort(arr, pivotIndex + 1, right);
-                    }
-                }
-
-                int Partition(List<string> arr, int left, int right)
-                {
-                    string pivot = arr[right];
-                    int i = left - 1;
-                    for (int j = left; j < right; j++)
-                    {
-                        if (arr[j].CompareTo(pivot) <= 0)
-                        {
-                            i++;
-                            string temp = arr[i];
-                            arr[i] = arr[j];
-                            arr[j] = temp;
-                        }
-                    }
-                    string temp2 = arr[i + 1];
-                    arr[i + 1] = arr[right];
-                    arr[right] = temp2;
-                    return i + 1;
-                }
-
-                foreach(string item in colors)
-                {
-                    string result = item;
-                    result += result_TB.Text;
-                }
+                //seach the richtextbox and do a quicksort
+                //if (result_TB.Text.Contains(search_TB.Text))
+                //{
+                //    MessageBox.Show("Found!");
+                // 
+                //    //var source = result_TB.Text;
+                //    //List<string> colors = new List<string>();
+                //    //using (StreamReader sr = new StreamReader(source))
+                //    //{
+                //    //    while (!sr.EndOfStream)
+                //    //    {
+                //    //        string line = sr.ReadLine();
+                //    //        colors.Add(line);
+                //    //     
+                
             }
-        }*/
+           
         }
     }
 }

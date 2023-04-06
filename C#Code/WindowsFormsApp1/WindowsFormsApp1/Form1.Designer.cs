@@ -36,7 +36,7 @@
             this.insert_bttn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.result_TB = new System.Windows.Forms.RichTextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.Option_combo = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // QuickSort_radio
@@ -122,24 +122,24 @@
             this.result_TB.TabIndex = 9;
             this.result_TB.Text = "";
             // 
-            // comboBox1
+            // Option_combo
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.Option_combo.FormattingEnabled = true;
+            this.Option_combo.Items.AddRange(new object[] {
             "ArrayList",
             "LinkedList",
             "BinaryTree"});
-            this.comboBox1.Location = new System.Drawing.Point(635, 99);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(203, 24);
-            this.comboBox1.TabIndex = 10;
+            this.Option_combo.Location = new System.Drawing.Point(635, 99);
+            this.Option_combo.Name = "Option_combo";
+            this.Option_combo.Size = new System.Drawing.Size(203, 24);
+            this.Option_combo.TabIndex = 10;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(972, 568);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.Option_combo);
             this.Controls.Add(this.result_TB);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.insert_bttn);
@@ -165,7 +165,7 @@
         private System.Windows.Forms.Button insert_bttn;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.RichTextBox result_TB;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox Option_combo;
     }
 }
 
