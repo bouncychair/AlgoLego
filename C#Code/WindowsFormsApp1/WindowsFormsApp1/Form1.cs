@@ -9,6 +9,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace WindowsFormsApp1
 {
@@ -30,40 +31,19 @@ namespace WindowsFormsApp1
             {
                 try
                 {
-                    using (StreamReader sr = new StreamReader(fd.FileName))
+                    using (StreamReader reader = new StreamReader(fd.FileName))
                     {
+                        string data = "";
 
-                        // Will tell if it is the first row
-                        bool firstRow = true;
-                        while (!sr.EndOfStream)
+                        // Read file contents line by line
+                        while (!reader.EndOfStream)
                         {
-                            string line = sr.ReadLine();
-                            string[] lineElements = line.Split(',');
-
-
-                            if (firstRow)
-                            {
-                                // The first row defines the column names
-                                foreach (string title in lineElements)
-                                {
-                                    result_TB.Text += title + "\t ";
-                                }
-                                result_TB.Text += "\n";
-                                firstRow = false;
-
-                            }
-                            else
-                            {
-                                // Adding values to the TB
-                                foreach (string value in lineElements)
-                                {
-                                    result_TB.Text += value + "\t";
-                                }
-                                result_TB.Text += "\n";
-
-                            }
+                            string line = reader.ReadLine();
+                            string[] columns = line.Split(',');
+                            string value = columns[1];
+                            data += value + "\n";
                         }
-                        sr.Close();
+                        result_TB.Text = data;
                     }
 
                 }
@@ -102,7 +82,24 @@ namespace WindowsFormsApp1
                 //    //     
                 
             }
+
+            if (LinearSearch_radio.Checked)
+            {
+                //Insert code here for linear search
+                result_TB.Text = "Linear Search!";
+            }
+
+            if (BinarySearch_radio.Checked)
+            {
+                //Inset code here for binary search
+                result_TB.Text = "Binary Search!";
+            }
            
+        }
+
+        private void LinearSearch_radio_CheckedChanged(object sender, EventArgs e)
+        {
+            //
         }
     }
 }

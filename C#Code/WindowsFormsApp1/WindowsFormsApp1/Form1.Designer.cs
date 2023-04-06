@@ -35,16 +35,17 @@
             this.Search_bttn = new System.Windows.Forms.Button();
             this.insert_bttn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.result_TB = new System.Windows.Forms.RichTextBox();
             this.Option_combo = new System.Windows.Forms.ComboBox();
+            this.result_TB = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // QuickSort_radio
             // 
             this.QuickSort_radio.AutoSize = true;
-            this.QuickSort_radio.Location = new System.Drawing.Point(635, 182);
+            this.QuickSort_radio.Location = new System.Drawing.Point(476, 148);
+            this.QuickSort_radio.Margin = new System.Windows.Forms.Padding(2);
             this.QuickSort_radio.Name = "QuickSort_radio";
-            this.QuickSort_radio.Size = new System.Drawing.Size(86, 20);
+            this.QuickSort_radio.Size = new System.Drawing.Size(72, 17);
             this.QuickSort_radio.TabIndex = 0;
             this.QuickSort_radio.TabStop = true;
             this.QuickSort_radio.Text = "QuickSort";
@@ -53,9 +54,10 @@
             // BubbleSort_radio
             // 
             this.BubbleSort_radio.AutoSize = true;
-            this.BubbleSort_radio.Location = new System.Drawing.Point(635, 226);
+            this.BubbleSort_radio.Location = new System.Drawing.Point(476, 184);
+            this.BubbleSort_radio.Margin = new System.Windows.Forms.Padding(2);
             this.BubbleSort_radio.Name = "BubbleSort_radio";
-            this.BubbleSort_radio.Size = new System.Drawing.Size(95, 20);
+            this.BubbleSort_radio.Size = new System.Drawing.Size(77, 17);
             this.BubbleSort_radio.TabIndex = 1;
             this.BubbleSort_radio.TabStop = true;
             this.BubbleSort_radio.Text = "BubbleSort";
@@ -64,20 +66,23 @@
             // LinearSearch_radio
             // 
             this.LinearSearch_radio.AutoSize = true;
-            this.LinearSearch_radio.Location = new System.Drawing.Point(635, 274);
+            this.LinearSearch_radio.Location = new System.Drawing.Point(476, 223);
+            this.LinearSearch_radio.Margin = new System.Windows.Forms.Padding(2);
             this.LinearSearch_radio.Name = "LinearSearch_radio";
-            this.LinearSearch_radio.Size = new System.Drawing.Size(108, 20);
+            this.LinearSearch_radio.Size = new System.Drawing.Size(88, 17);
             this.LinearSearch_radio.TabIndex = 2;
             this.LinearSearch_radio.TabStop = true;
             this.LinearSearch_radio.Text = "LinearSearch";
             this.LinearSearch_radio.UseVisualStyleBackColor = true;
+            this.LinearSearch_radio.CheckedChanged += new System.EventHandler(this.LinearSearch_radio_CheckedChanged);
             // 
             // BinarySearch_radio
             // 
             this.BinarySearch_radio.AutoSize = true;
-            this.BinarySearch_radio.Location = new System.Drawing.Point(635, 322);
+            this.BinarySearch_radio.Location = new System.Drawing.Point(476, 262);
+            this.BinarySearch_radio.Margin = new System.Windows.Forms.Padding(2);
             this.BinarySearch_radio.Name = "BinarySearch_radio";
-            this.BinarySearch_radio.Size = new System.Drawing.Size(109, 20);
+            this.BinarySearch_radio.Size = new System.Drawing.Size(88, 17);
             this.BinarySearch_radio.TabIndex = 3;
             this.BinarySearch_radio.TabStop = true;
             this.BinarySearch_radio.Text = "BinarySearch";
@@ -85,9 +90,10 @@
             // 
             // Search_bttn
             // 
-            this.Search_bttn.Location = new System.Drawing.Point(635, 421);
+            this.Search_bttn.Location = new System.Drawing.Point(476, 342);
+            this.Search_bttn.Margin = new System.Windows.Forms.Padding(2);
             this.Search_bttn.Name = "Search_bttn";
-            this.Search_bttn.Size = new System.Drawing.Size(116, 46);
+            this.Search_bttn.Size = new System.Drawing.Size(87, 37);
             this.Search_bttn.TabIndex = 4;
             this.Search_bttn.Text = "Search";
             this.Search_bttn.UseVisualStyleBackColor = true;
@@ -95,9 +101,10 @@
             // 
             // insert_bttn
             // 
-            this.insert_bttn.Location = new System.Drawing.Point(60, 515);
+            this.insert_bttn.Location = new System.Drawing.Point(45, 418);
+            this.insert_bttn.Margin = new System.Windows.Forms.Padding(2);
             this.insert_bttn.Name = "insert_bttn";
-            this.insert_bttn.Size = new System.Drawing.Size(75, 23);
+            this.insert_bttn.Size = new System.Drawing.Size(56, 19);
             this.insert_bttn.TabIndex = 6;
             this.insert_bttn.Text = "Insert";
             this.insert_bttn.UseVisualStyleBackColor = true;
@@ -108,19 +115,12 @@
             this.label1.AutoSize = true;
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(55, 42);
+            this.label1.Location = new System.Drawing.Point(41, 34);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(219, 25);
+            this.label1.Size = new System.Drawing.Size(180, 20);
             this.label1.TabIndex = 7;
             this.label1.Text = "LEGO ALGORITHMS";
-            // 
-            // result_TB
-            // 
-            this.result_TB.Location = new System.Drawing.Point(60, 99);
-            this.result_TB.Name = "result_TB";
-            this.result_TB.Size = new System.Drawing.Size(550, 398);
-            this.result_TB.TabIndex = 9;
-            this.result_TB.Text = "";
             // 
             // Option_combo
             // 
@@ -129,16 +129,26 @@
             "ArrayList",
             "LinkedList",
             "BinaryTree"});
-            this.Option_combo.Location = new System.Drawing.Point(635, 99);
+            this.Option_combo.Location = new System.Drawing.Point(476, 80);
+            this.Option_combo.Margin = new System.Windows.Forms.Padding(2);
             this.Option_combo.Name = "Option_combo";
-            this.Option_combo.Size = new System.Drawing.Size(203, 24);
+            this.Option_combo.Size = new System.Drawing.Size(153, 21);
             this.Option_combo.TabIndex = 10;
+            // 
+            // result_TB
+            // 
+            this.result_TB.Location = new System.Drawing.Point(45, 80);
+            this.result_TB.Margin = new System.Windows.Forms.Padding(2);
+            this.result_TB.Name = "result_TB";
+            this.result_TB.Size = new System.Drawing.Size(414, 324);
+            this.result_TB.TabIndex = 9;
+            this.result_TB.Text = "";
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(972, 568);
+            this.ClientSize = new System.Drawing.Size(729, 462);
             this.Controls.Add(this.Option_combo);
             this.Controls.Add(this.result_TB);
             this.Controls.Add(this.label1);
@@ -148,6 +158,7 @@
             this.Controls.Add(this.LinearSearch_radio);
             this.Controls.Add(this.BubbleSort_radio);
             this.Controls.Add(this.QuickSort_radio);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -164,8 +175,8 @@
         private System.Windows.Forms.Button Search_bttn;
         private System.Windows.Forms.Button insert_bttn;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.RichTextBox result_TB;
         private System.Windows.Forms.ComboBox Option_combo;
+        private System.Windows.Forms.RichTextBox result_TB;
     }
 }
 
