@@ -8,8 +8,9 @@ namespace WindowsFormsApp1
         {
         }
 
-        public void BubbleSort<T>(OurArrayList array) where T : IComparable<T>
+        public void BubbleSort<T>(OurArrayList list) where T : IComparable<T>
         {
+            T[] array = (T[])list.ToArray(typeof(T));
             int n = array.Length
 
             for (int i = 0; i < n - 1; i++)
@@ -23,6 +24,11 @@ namespace WindowsFormsApp1
                         array[j + 1] = temporary;
                     }
                 }
+            }
+
+            foreach (T item in array)
+            {
+                list.Add(item);
             }
         }
     }
