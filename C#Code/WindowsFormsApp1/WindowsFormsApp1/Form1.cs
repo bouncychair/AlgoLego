@@ -72,23 +72,28 @@ namespace WindowsFormsApp1
 
             //fix selecting the rows
             //checking the layout of programm
-            if (Option_combo.SelectedIndex == 2 && QuickSort_radio.Checked)
+            if (Option_combo.SelectedIndex.Equals(2) && QuickSort_radio.Checked)
             {
-                //seach the richtextbox and do a quicksort
-                //if (result_TB.Text.Contains(search_TB.Text))
-                //{
-                //    MessageBox.Show("Found!");
-                // 
-                //    //var source = result_TB.Text;
-                //    //List<string> colors = new List<string>();
-                //    //using (StreamReader sr = new StreamReader(source))
-                //    //{
-                //    //    while (!sr.EndOfStream)
-                //    //    {
-                //    //        string line = sr.ReadLine();
-                //    //        colors.Add(line);
-                //    //     
+                //make a quicksort with colorName
+               
+                int left = 0;
+                int right = colorsName.Count - 1;
                 
+                List<Tuple<string, int>> colors = new List<Tuple<string, int>>();
+
+                // add to the list the colors name with their original indexes
+                for (int i = 0; i < colorsName.Count; i++)
+                {
+                    Tuple<string, int> tuple = Tuple.Create(colorsName[i], i);
+                    colors.Add(tuple);
+                }
+
+                // list is sorted based on the color name
+                colors.Sort((a, b) => string.Compare(a.Item1, b.Item1));
+
+                //sort the List colors with Quicksort
+                result_TB.Text += string.Join(Environment.NewLine, colors.Select(x => x.Item1 + " " + x.Item2));
+
             }
 
             if (LinearSearch_radio.Checked)
