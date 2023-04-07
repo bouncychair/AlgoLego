@@ -93,15 +93,6 @@ namespace WindowsFormsApp1
 
             if (LinearSearch_radio.Checked)
             {
-                //Add explanation
-                //Insert code here for linear search
-                /*foreach(String name in colorsName)
-                {
-                    result_TB.Text += name;
-                }*/
-
-                //result_TB.Text = colorsName[0];
-
                 Boolean found = false;
                 string target = colorNameInput.Text;
 
@@ -121,29 +112,13 @@ namespace WindowsFormsApp1
 
             if (BinarySearch_radio.Checked)
             {
-                //Add explanation
-                //Inset code here for binary search
-                //result_TB.Text = "Binary Search!";
-                //colorsName.Sort(); //SORT THE LIST
-
                 int low = 0;
                 int high = colorsName.Count - 1;
                 int middle;
                 string target = colorNameInput.Text;
                 Boolean found = false;
 
-                /*
-                 * We use a tuple to store both the index and the string value of each element in the list before sorting. 
-                 * This allows us to sort the list based on the string value while retaining the original index of each element.
-                 */
-
                 List<Tuple<string, int>> colors = new List<Tuple<string, int>>();
-
-                /*
-                 * What a tuple is ?
-                 * A tuple is a datastructure in C# that allows to group multiple elements of different DataTypes intoa  single unit.
-                 * Tuples are useful when you need to return multiple values from a method or when you want to group related data together.
-                 */
 
                 // add to the list the colors name with their original indexes
                 for (int i = 0; i < colorsName.Count; i++)
@@ -180,33 +155,6 @@ namespace WindowsFormsApp1
                 {
                     result_TB.Text = "Color name not found !";
                 }
-
-
-
-                /*while (low <= high)
-                {
-                    middle = (low + high) / 2;
-
-                    if (string.Compare(colorsName[middle], target) < 0)
-                    {
-                        low = middle + 1;
-                    }
-                    else if (string.Compare(colorsName[middle], target) > 0)
-                    {
-                        high = middle - 1;
-                    }
-                    else
-                    {
-                        result_TB.Text = target + " color name found at index " + middle.ToString();
-                        found = true;
-                        break;
-                    }
-                }
-                if (!found)
-                {
-                    result_TB.Text = "Color name not found !";
-                }*/
-
             }
            
         }
