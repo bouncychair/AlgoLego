@@ -1,20 +1,19 @@
 ﻿using System;
 
-namespace WindowsFormsApp1
-{
-
-    internal class OurArrayList
+namespace WindowsFormsApp1 
+{ 
+     internal class OurArrayList
     {
-        private object[] items;
+        private T[] items;
         private int counter;
 
         public OurArrayList(int capacity)
         {
-            items = new object[capacity];
+            items = new T[capacity];
             counter = 0;
         }
 
-        public void Add(object item)
+        public void Add(T item)
         {
             if (counter == items.Length)
             {
@@ -22,7 +21,7 @@ namespace WindowsFormsApp1
             }
         }
 
-        public object Get(int index)
+        public T Get(int index)
         {
             if (index >= counter)
             {
@@ -32,7 +31,7 @@ namespace WindowsFormsApp1
             return items[index];
         }
 
-        public void Remove(int index)
+        public void RemoveAt(int index)
         {
             if (index >= counter)
             {
@@ -50,15 +49,23 @@ namespace WindowsFormsApp1
         public int Count
         {
             get { return counter; }
+            set;
         }
 
         private void Resize()
         {
             int newCapacity = items.Length * 2;
-            object[] newArray = new object[newCapacity];
+            T[] newArray = new T[newCapacity];
             Array.Copy(items, newArray, counter);
             items = newArray;
         }
 
+        public void Clear()
+        {
+            Array.Clear(items, 0, Count);
+            Count = 0;
+        }
+
     }
+
 }
